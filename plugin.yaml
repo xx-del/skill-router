@@ -1,0 +1,18 @@
+name: skill-router
+version: 3.1.0
+description: 完全自动化的技能智能路由器，基于 bm25s（Python原生，动态索引）
+author: OpenClaw Team
+
+# Hermes 标准插件结构
+# __init__.py 必须包含 register(ctx) 函数
+# ctx.register_hook() 注册生命周期钩子
+
+dependencies:
+  pip:
+    - bm25s>=0.3.0
+    - PyYAML>=6.0
+
+settings:
+  max_recommendations: 3      # 最多推荐技能数
+  min_score: 0.3              # 最低匹配分数
+  context_prefix: "[SKILL_ROUTER]"  # 上下文前缀（区分其他插件）
